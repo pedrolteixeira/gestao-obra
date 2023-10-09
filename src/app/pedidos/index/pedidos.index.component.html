@@ -1,0 +1,52 @@
+<div class="headline mb-5">
+    <h1>Pedidos <button type="button" class="btn btn-primary" (click)="router.navigate(['pedidos-new'])" >Adicionar</button></h1>
+</div>
+
+
+<div class="mb-3 pedidos-table">
+    <div>
+        <table class="table table">
+            <thead>
+                <tr>
+                    <th class="text-center" scope="col">Material</th>
+                    <th class="text-center" scope="col">Quantidade</th>
+                    <th class="text-center" scope="col">Unidade</th>
+                    <th class="text-center" scope="col">Valor Total</th>
+                    <th class="text-center" scope="col">Obra (Cliente)</th>
+                    <th class="text-center" scope="col">Data do Pedido</th>
+                    <th class="text-center" scope="col">Situação</th>
+                    <th class="text-center" scope="col"></th>
+                    <th class="text-center" scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngIf="pedidos && pedidos.length == 0">
+                    <td colspan="9" class="text-center align-middle">
+                        <div class="centered-div">
+                            <p>Não há pedidos cadastrados</p>
+                        </div>
+                    </td>
+                </tr>                
+                <tr *ngFor="let pedido of pedidos">
+                    <td class="text-center align-middle">{{ pedido.nomeMaterial }}</td>
+                    <td class="text-center align-middle">{{ pedido.quantidade }}</td>
+                    <td class="text-center align-middle">{{ pedido.unidadeMaterial }}</td>
+                    <td class="text-center align-middle">R${{ pedido.valorTotal }}</td>
+                    <td class="text-center align-middle">{{ pedido.nomeObraMaterial }}</td>
+                    <td class="text-center align-middle">{{ pedido.dataPedido | date:'dd/MM/yyyy' }}</td>
+                    <td class="text-center align-middle">
+                        <span class="badge rounded-pill bg-warning align-middle" *ngIf="pedido.status == 1">Aberto</span>
+                        <span class="badge rounded-pill bg-success align-middle" *ngIf="pedido.status == 2">Entregue</span>
+                        <span class="badge rounded-pill bg-danger align-middle" *ngIf="pedido.status == 3">Cancelado</span>
+                    </td>
+                    <td class="text-center">
+                        <button class="btn btn-default btn-sm"  (click)="editarPedido(pedido)"><i class="fa-solid fa-pen-to-square icon-menu"></i> Editar</button>
+                    </td>
+                    <td class="text-center">
+                        <button class="btn btn-default btn-danger btn-sm" (click)="excluirPedido(pedido)"><i class="fa-solid fa-trash-can icon-menu"></i> Excluir</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

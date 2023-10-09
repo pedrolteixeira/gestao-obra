@@ -1,0 +1,36 @@
+<h1 class="headline mb-5">Dashboard</h1>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6 col-lg-6 mb-3">
+            <div class="card border-secondary mb-3">
+                <div class="card-header">Total de Obras</div>
+                <div class="card-body">
+                    <h5 class="card-title"> {{ obras.length }} Obra(s)</h5>
+                    <p class="card-text">Você pode cadastrar uma nova obra ou editar uma existente.</p>
+                    <button class="btn btn-primary" (click)="router.navigate(['obras'])">Ver Obras</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-6 mb-3">
+            <div class="card border-secondary mb-3">
+                <div class="card-header">Total de Pedidos em Aberto</div>
+                <div class="card-body">
+                    <h5 class="card-title">{{ pedidosEmAberto.length }} Pedido(s) em aberto</h5>
+                    <p class="card-text">Você pode cadastrar um novo pedido ou editar um existente.</p>
+                    <button class="btn btn-primary" (click)="router.navigate(['pedidos'])">Ver Pedidos</button>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="col-md-6 col-lg-4 mb-3">
+            <div class="card border-secondary mb-3">
+                <div class="card-header">Total de Materiais no Estoque</div>
+                <div class="card-body">
+                    <h5 class="card-title">{{ totalMateriais }} Materiais</h5>
+                    <p class="card-text">Você pode controlar o seu estoque de materiais.</p>
+                    <button class="btn btn-primary" (click)="router.navigate(['estoque'])">Ver Estoque</button>
+                </div>
+            </div>
+        </div> -->
+    </div>
+</div>

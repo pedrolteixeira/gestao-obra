@@ -1,0 +1,34 @@
+<h1 class="headline mb-5">Estoque</h1>
+
+<div class="mb-3 estoque-table">
+    <div>
+        <table class="table table">
+            <thead>
+                <tr>
+                    <th class="text-center" scope="col">Nome Material</th>
+                    <th class="text-center" scope="col">Quantidade Total</th>
+                    <th class="text-center" scope="col">Obra (Cliente)</th>
+                    <th class="text-center" scope="col">
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngIf="estoque && estoque.length == 0">
+                    <td colspan="6" class="text-center align-middle">
+                        <div class="centered-div">
+                            <p>Não há estoque para essa obra</p>
+                        </div>
+                    </td>
+                </tr>
+                <tr *ngFor="let est of estoque">
+                    <td class="text-center align-middle">{{ est.nomeMaterial }}</td>
+                    <td class="text-center align-middle">{{ est.quantidadeMaterial }} {{ est.unidadeMaterial }}</td>
+                    <td class="text-center align-middle">{{ est.nomeObraMaterial }}</td>
+                    <td class="text-center align-middle">
+                        <button type="button" class="btn btn-sm excluir-button" (click)="editarEstoque(est)">Editar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

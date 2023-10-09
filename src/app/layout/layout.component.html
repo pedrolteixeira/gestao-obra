@@ -1,0 +1,62 @@
+<div class="d-flex flex-column" style="height: 100vh;">
+    <header class="bg-dark text-black p-1 cabecalho d-flex justify-content-between align-items-center">
+        <div class="d-flex align-items-center justify-content-center flex-grow-1">
+            <img class="logo" src="https://i.postimg.cc/L8tQL81Z/m-INHA-OBRA-removebg-preview.png">
+        </div>
+        <div class="d-flex align-items-center">
+            <a (click)="sair()">
+                <i class="fa-solid fa-right-from-bracket icon-logout"></i>
+            </a>
+        </div>
+    </header>
+
+    <div class="d-flex flex-grow-0 vh-100">
+        <div class="menu">
+            <div class="d-flex flex-column flex-shrink-0 text-white menu">
+                <ul class="nav nav-pills flex-column mb-auto p-3">
+                    <li class="nav-item nav-menu-item">
+                        <a routerLink="/pagina-inicial" routerLinkActive="active"
+                            class="nav-link link-menu text-white custom-link"
+                            style="background: transparent; border: none; text-align: center;">
+                            <i class="fa-solid fa-house icon-menu"></i>
+                            <span>Inicio</span>
+                        </a>
+                    </li>
+                    <li class="nav-item nav-menu-item">
+                        <a routerLink="/obras" routerLinkActive="active" class="nav-link link-menu text-white"
+                            style="background: transparent; border: none; text-align: center;">
+                            <i class="fa-solid fa-helmet-safety icon-menu"></i>
+                            <span>Obras</span>
+                        </a>
+                    </li>
+                    <li class="nav-item nav-menu-item">
+                        <a routerLink="/materiais" routerLinkActive="active" class="nav-link link-menu text-white"
+                            style="background: transparent; border: none; text-align: center;">
+                            <i class="fa-solid fa-trowel-bricks icon-menu"></i>
+                            <span>Materiais</span>
+                        </a>
+                    </li>
+                    <li class="nav-item nav-menu-item">
+                        <a routerLink="/pedidos" routerLinkActive="active" class="nav-link link-menu text-white"
+                            style="background: transparent; border: none; text-align: center;">
+                            <i class="fa-solid fa-clipboard-list icon-menu"></i>
+                            <span>Pedidos</span>
+                        </a>
+                    </li>
+                    <li class="nav-item nav-menu-item">
+                        <a routerLink="/estoque" routerLinkActive="active" class="nav-link link-menu text-white"
+                            style="background: transparent; border: none; text-align: center;">
+                            <i class="fa-solid fa-box-open icon-menu"></i>
+                            <span>Estoque</span>
+                        </a>
+                    </li>
+                </ul>
+                <hr>
+            </div>
+        </div>
+
+        <div class="flex-grow-1 p-3">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

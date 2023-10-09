@@ -1,0 +1,23 @@
+<div class="container mt-5">
+  <div class="row justify-content-center align-items-center">
+    <div class="col-md-4">
+      <div class="form-container text-center">
+        <img class="logo mb-4" src="https://i.postimg.cc/L8tQL81Z/m-INHA-OBRA-removebg-preview.png">
+        <form class="form" (ngSubmit)="fazerLogin()">
+          <div class="form-group">
+            <input type="email" class="form-control" name="email" [(ngModel)]="email" placeholder="E-mail" required>
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" name="senha" [(ngModel)]="senha" placeholder="Senha" required>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-block btn-primary"  style="background-color: rgb(255, 140, 0); border: none;">Entrar</button>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-block btn-secondary" (click)="router.navigate(['register'])">Cadastre-se</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

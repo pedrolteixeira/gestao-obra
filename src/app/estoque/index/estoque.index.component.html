@@ -1,0 +1,17 @@
+<h1 class="headline mb-5">Estoque</h1>
+<div class="alert alert-warning col-md-12" *ngIf="obras.length == 0" role="alert">
+    É necessário ter uma obra cadastrada para controlar o estoque.<span style="font-weight: bold;"><a routerLink="/obras-new"> Clique aqui </a></span>para cadastrar uma obra.
+</div>
+<div class="row">
+    <div class="col-md-4"  *ngFor="let obra of obras">
+        <div class="card" style="margin-bottom: 20px;">
+            <div class="card-body">
+                <h3 class="card-title">Obra (Cliente): {{ obra.cliente }}</h3>
+                <p class="card-text">Início: {{ obra.dataInicio | date:'dd/MM/yyyy' }}</p>
+                <p class="card-text">Cidade: {{ obra.cidade }}</p>
+                <p class="card-text">Entrega Prevista: {{ obra.dataEntrega | date:'dd/MM/yyyy' }}</p>
+                <button class="btn btn-primary" (click)="verEstoque(obra.id)">Ver Estoque</button>
+            </div>
+        </div>
+    </div>
+</div>

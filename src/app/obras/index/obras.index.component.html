@@ -1,0 +1,41 @@
+<div class="headline mb-5">
+    <h1>Obras <button type="button" class="btn btn-primary" (click)="router.navigate(['obras-new'])" >Adicionar</button></h1>
+</div>
+
+
+<div class="mb-3 obras-table">
+    <div>
+        <table class="table table">
+            <thead>
+                <tr>
+                    <th class="text-center" scope="col">Cliente</th>
+                    <th class="text-center" scope="col">Estado</th>
+                    <th class="text-center" scope="col">Cidade</th>
+                    <th class="text-center" scope="col">Início</th>
+                    <th class="text-center" scope="col">Entrega Prevista</th>
+                    <th class="text-center" scope="col">
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngIf="obras && obras.length == 0">
+                    <td colspan="6" class="text-center align-middle">
+                        <div class="centered-div">
+                            <p>Não há obras cadastradas</p>
+                        </div>
+                    </td>
+                </tr>
+                <tr *ngFor="let obra of obras">
+                    <td class="text-center align-middle">{{ obra.cliente }}</td>
+                    <td class="text-center align-middle">{{ obra.estado }}</td>
+                    <td class="text-center align-middle">{{ obra.cidade }}</td>
+                    <td class="text-center align-middle">{{ obra.dataInicio | date:'dd/MM/yyyy' }}</td>
+                    <td class="text-center align-middle">{{ obra.dataEntrega | date:'dd/MM/yyyy' }}</td>
+                    <td class="text-center align-middle">
+                        <button class="btn btn-default btn-danger btn-sm" (click)="excluirObra(obra.id)"><i class="fa-solid fa-trash-can icon-menu"></i> Excluir</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

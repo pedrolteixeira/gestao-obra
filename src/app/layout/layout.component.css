@@ -1,0 +1,43 @@
+.cabecalho {
+    background-color: rgb(241, 241, 241) !important;
+}
+
+.logo {
+    width: 300px;
+}
+
+.menu {
+    height: 100vh;
+    background-color: rgb(255, 140, 0) !important;
+}
+
+.link-menu {
+    color: #fff;
+    text-decoration: none;
+}
+
+.link-menu:hover {
+    background-color: rgba(88, 88, 88, 0.309) !important;
+}
+
+.nav-menu-item {
+    margin-bottom: 15px;
+}
+
+.icon-menu {
+    color: #ffffff;
+    font-size: 30px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.icon-logout {
+    color: #000000;
+    font-size: 28px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.icon-logout:hover {
+    color: rgb(255, 140, 0);
+}

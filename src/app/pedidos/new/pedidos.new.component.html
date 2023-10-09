@@ -1,0 +1,58 @@
+<h2 class="headline">Cadastrar Pedido de Material</h2>
+
+<form class="row g-3"  autocomplete="off" (ngSubmit)="cadastrarPedido()">
+    <div class="alert alert-warning col-md-12" role="alert" *ngIf="avisoStatus">
+        Ao salvar um pedido com status de <span style="font-weight: bold;">ENTREGUE</span>, ele não poderá ser editado novamente e a quantidade do material será salva imediatamente em seu estoque.
+      </div>
+    <div class="col-md-6">
+      <label for="material" class="form-label">Material</label>
+      <select class="form-control" name="material" [(ngModel)]="formData.idMaterial" (change)="atualizarMaterial()">
+        <option *ngIf="!materiais || materiais.length === 0" disabled selected (click)="router.navigate(['materiais-new'])">Você nao tem nenhum material cadastrado</option>
+        <option *ngFor="let material of materiais" [value]="material.id">
+            {{ material.nome }}
+        </option>
+    </select>
+    </div>
+    <div class="col-md-3">
+      <label for="quantidade" class="form-label">Quantidade</label>
+      <input type="number" class="form-control" id="quantidade" name="quantidade" [(ngModel)]="formData.quantidade">
+    </div>
+    <div class="col-md-3">
+        <label for="unidade" class="form-label">Unidade</label>
+        <input type="text" class="form-control" id="unidade" name="unidade" [(ngModel)]="formData.unidadeMaterial" disabled>
+      </div>
+    <div class="col-6">
+      <label for="valorTotal" class="form-label">Valor Total</label>
+      <input type="number" class="form-control" id="valorTotal" name="valorTotal" [(ngModel)]="formData.valorTotal">
+    </div>
+    <div class="col-md-6">
+        <label for="fornecedor" class="form-label">Fornecedor</label>
+        <input type="text" class="form-control" id="fornecedor" name="fornecedor" [(ngModel)]="formData.fornecedor">
+    </div>
+    <div class="col-6">
+        <label for="obra" class="form-label">Obra (Cliente)</label>
+        <input type="text" class="form-control" id="obra" name="obra" [(ngModel)]="formData.nomeObraMaterial" disabled>
+    </div>
+    <div class="col-6">
+        <label for="obra" class="form-label">Data do Pedido</label>
+        <input type="date" class="form-control" id="dataPedido" name="dataPedido" [(ngModel)]="formData.dataPedido">
+    </div>
+    <div class="col-6">
+        <label for="dataEntrega" class="form-label">Status</label>
+        <select class="form-control" name="status" [(ngModel)]="formData.status" (change)="alteraAvisoStatus()">
+            <option value="1" selected>
+                Aberto
+            </option>
+            <option value="2">
+                Entregue
+            </option>
+            <option value="3">
+                Cancelado
+            </option>
+        </select>
+    </div>
+    <div class="col-md-12">
+        <button class="btn btn-primary" type="submit">Cadastrar</button>
+        <button class="btn btn-default ml-1" type="button" (click)="router.navigate(['pedidos'])">Cancelar</button>
+    </div>
+</form>

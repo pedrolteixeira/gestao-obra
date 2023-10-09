@@ -1,0 +1,36 @@
+<div class="headline mb-5">
+    <h1>Materiais <button type="button" class="btn btn-primary" (click)="router.navigate(['materiais-new'])" >Adicionar</button></h1>
+</div>
+
+
+<div class="mb-3 pedidos-table">
+    <div>
+        <table class="table table">
+            <thead>
+                <tr>
+                    <th class="text-center" scope="col">Nome</th>
+                    <th class="text-center" scope="col">Unidade</th>
+                    <th class="text-center" scope="col">Obra (Cliente)</th>
+                    <th class="text-center" scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngIf="materiais && materiais.length == 0">
+                    <td colspan="6" class="text-center align-middle">
+                        <div class="centered-div">
+                            <p>Não há materiais cadastrados</p>
+                        </div>
+                    </td>
+                </tr>
+                <tr *ngFor="let material of materiais">
+                    <td class="text-center">{{ material.nome }}</td>
+                    <td class="text-center">{{ material.unidade }}</td>
+                    <td class="text-center">{{ material.nomeObra }}</td>
+                    <td class="text-center">
+                    <button class="btn btn-default btn-danger btn-sm" (click)="excluirMaterial(material.id)"><i class="fa-solid fa-trash-can icon-menu"></i> Excluir</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

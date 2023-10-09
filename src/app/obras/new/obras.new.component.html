@@ -1,0 +1,31 @@
+<h2 class="headline">Cadastrar Obra</h2>
+
+<form class="row g-3"  autocomplete="off" (ngSubmit)="cadastrarObra()">
+    <!-- <div class="alert alert-danger col-md-12" role="alert">
+      Alguns campos do formulário apresentam erro
+    </div> -->
+    <div class="col-md-6">
+      <label for="nome" class="form-label">Cliente</label>
+      <input type="text" class="form-control" id="nome" name="nome" [(ngModel)]="formData.cliente">
+    </div>
+    <div class="col-md-6">
+      <label for="estado" class="form-label">Estado</label>
+      <input type="text" class="form-control" id="estado" name="estado" [(ngModel)]="formData.estado">
+    </div>
+    <div class="col-6">
+      <label for="cidade" class="form-label">Cidade</label>
+      <input type="text" class="form-control" id="cidade" name="cidade" [(ngModel)]="formData.cidade">
+    </div>
+    <div class="col-6">
+        <label for="dataInicio" class="form-label">Data de Início</label>
+        <input type="date" class="form-control" id="dataInicio" name="dataInicio" [(ngModel)]="formData.dataInicio">
+    </div>
+    <div class="col-6">
+        <label for="dataEntrega" class="form-label">Prazo de Entrega</label>
+        <input type="date" class="form-control" id="dataEntrega" name="dataEntrega" [(ngModel)]="formData.dataEntrega">
+    </div>
+    <div class="col-md-12">
+      <button class="btn btn-primary" type="submit">Cadastrar</button>
+      <button class="btn btn-default ml-1" type="button" (click)="router.navigate(['obras'])">Cancelar</button>
+    </div>
+</form>

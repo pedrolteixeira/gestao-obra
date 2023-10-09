@@ -1,0 +1,28 @@
+<h1 class="headline mb-5">Editar Estoque</h1>
+
+
+<form class="row g-3"  autocomplete="off" (ngSubmit)="editarEstoque()">
+    <!-- <div class="alert alert-danger col-md-12" role="alert">
+      Alguns campos do formulário apresentam erro
+    </div> -->
+    <div class="col-md-6">
+      <label for="material" class="form-label">Material</label>
+      <input type="text" class="form-control" id="material" name="material" [(ngModel)]="formData.nomeMaterial" disabled>
+    </div>
+    <div class="col-md-6">
+      <label for="quantidade" class="form-label">Quantidade</label>
+      <input type="number" class="form-control" id="quantidade" name="quantidade" [(ngModel)]="formData.quantidadeMaterial">
+    </div>
+    <div class="col-md-6">
+        <label for="unidade" class="form-label">Unidade</label>
+        <input type="text" class="form-control" id="unidade" name="unidade" [(ngModel)]="formData.unidadeMaterial" disabled>
+      </div>
+    <div class="col-md-6">
+        <label for="obra" class="form-label">Obra (Cliente)</label>
+        <input type="text" class="form-control" id="obra" name="obra" [(ngModel)]="formData.nomeObraMaterial" disabled>
+    </div>
+    <div class="col-md-12">
+        <button class="btn btn-primary" type="submit">Salvar</button>
+        <button class="btn btn-default ml-1" type="button" (click)="router.navigate(['estoque-view'])">Cancelar</button>
+    </div>
+</form>
