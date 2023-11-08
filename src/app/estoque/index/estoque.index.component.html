@@ -1,5 +1,8 @@
 <h1 class="headline mb-5">Estoque</h1>
-<div class="alert alert-warning col-md-12" *ngIf="obras.length == 0" role="alert">
+<div class="col-md-12 text-center" *ngIf="carregando">
+    <span class="loader"></span>
+</div>
+<div class="alert alert-warning col-md-12" *ngIf="!carregando && obras && obras.length == 0" role="alert">
     É necessário ter uma obra cadastrada para controlar o estoque.<span style="font-weight: bold;"><a routerLink="/obras-new"> Clique aqui </a></span>para cadastrar uma obra.
 </div>
 <div class="row">

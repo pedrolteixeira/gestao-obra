@@ -3,6 +3,7 @@
 </div>
 
 
+
 <div class="mb-3 obras-table">
     <div>
         <table class="table table">
@@ -18,7 +19,15 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngIf="obras && obras.length == 0">
+                <tr *ngIf="carregando">
+                    <td colspan="6" class="text-center align-middle">
+                        <div class="centered-div">
+                            <span class="loader"></span>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr *ngIf="!carregando && obras && obras.length == 0">
                     <td colspan="6" class="text-center align-middle">
                         <div class="centered-div">
                             <p>Não há obras cadastradas</p>
@@ -32,7 +41,7 @@
                     <td class="text-center align-middle">{{ obra.dataInicio | date:'dd/MM/yyyy' }}</td>
                     <td class="text-center align-middle">{{ obra.dataEntrega | date:'dd/MM/yyyy' }}</td>
                     <td class="text-center align-middle">
-                        <button class="btn btn-default btn-danger btn-sm" (click)="excluirObra(obra.id)"><i class="fa-solid fa-trash-can icon-menu"></i> Excluir</button>
+                        <button class="btn btn-default btn-danger btn-sm" (click)="excluirObra(obra)"><i class="fa-solid fa-trash-can icon-menu"></i> Excluir</button>
                     </td>
                 </tr>
             </tbody>

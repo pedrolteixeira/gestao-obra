@@ -27,7 +27,7 @@ export class ObrasService {
           return this.firestore.collection('obras', ref => ref.where('criadoPor', '==', user.uid)).snapshotChanges().pipe(
             map(actions => {
               return actions.map(a => {
-                const data = a.payload.doc.data();
+                const data: any = a.payload.doc.data();
                 const id = a.payload.doc.id;
                 return { id, ...data };
               });

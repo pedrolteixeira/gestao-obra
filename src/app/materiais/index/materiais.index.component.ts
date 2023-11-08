@@ -10,6 +10,8 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class MateriaisIndexComponent {
   public materiais: any = [];
+  public carregando: boolean = false;
+
   constructor(
     public router : Router,
     public materiaisService : MateriaisService,
@@ -21,8 +23,10 @@ export class MateriaisIndexComponent {
   }
 
   listarMateriais() {
+    this.carregando = true;
     this.materiaisService.getMateriais().subscribe((resp: any) => {
       this.materiais = resp
+      this.carregando = false;
     })
   }
 

@@ -13,6 +13,7 @@ export class PaginaInicialComponent {
   public obras: any = [];
   public pedidosEmAberto: any = [];
   public totalMateriais: any = 0;
+  public carregando: boolean = false;
 
   constructor(
     public obrasService : ObrasService,
@@ -26,12 +27,15 @@ export class PaginaInicialComponent {
   }
 
   listarObras() {
+    this.carregando = true;
     this.obrasService.getObras().subscribe((resp: any) => {
       this.obras = resp
+      this.carregando = false;
     })
   }
 
   listarPedidos() {
+    this.carregando = true;
     this.pedidosService.getPedidos().subscribe((resp: any) => {
       let pedidos = resp;
       pedidos.forEach((pedido: any) => {
@@ -42,6 +46,7 @@ export class PaginaInicialComponent {
           this.totalMateriais = this.totalMateriais + pedido.quantidade
         }
       })
+      this.carregando = false;
     })
   }
 }

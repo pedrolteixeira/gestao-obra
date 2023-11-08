@@ -11,6 +11,7 @@ import { ToastrService } from 'ngx-toastr';
 export class PedidosIndexComponent {
   public pedidos: any;
   public obras: any;
+  public carregando: boolean = false;
 
   constructor(
     public router: Router,
@@ -25,8 +26,10 @@ export class PedidosIndexComponent {
   }
 
   listarPedidos() {
+    this.carregando = true;
     this.pedidosService.getPedidos().subscribe((resp: any) => {
       this.pedidos = resp
+      this.carregando = false;
     })
   }
 

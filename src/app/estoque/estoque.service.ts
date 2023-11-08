@@ -22,7 +22,7 @@ export class EstoqueService {
     return this.firestore.collection('estoque', ref => ref.where('obraId', '==', obraId)).snapshotChanges().pipe(
       map(actions => {
         return actions.map(a => {
-          const data = a.payload.doc.data();
+          const data: any = a.payload.doc.data();
           const id = a.payload.doc.id;
           return { id, ...data };
         });
@@ -47,7 +47,7 @@ export class EstoqueService {
           return this.firestore.collection('estoque', ref => ref.where('criadoPor', '==', user.uid)).snapshotChanges().pipe(
             map(actions => {
               return actions.map(a => {
-                const data = a.payload.doc.data();
+                const data: any = a.payload.doc.data();
                 const id = a.payload.doc.id;
                 return { id, ...data };
               });

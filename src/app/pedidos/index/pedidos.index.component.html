@@ -20,7 +20,14 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngIf="pedidos && pedidos.length == 0">
+                <tr *ngIf="carregando">
+                    <td colspan="9" class="text-center align-middle">
+                        <div class="centered-div">
+                            <span class="loader"></span>
+                        </div>
+                    </td>
+                </tr>
+                <tr *ngIf="!carregando && pedidos && pedidos.length == 0">
                     <td colspan="9" class="text-center align-middle">
                         <div class="centered-div">
                             <p>Não há pedidos cadastrados</p>

@@ -15,7 +15,14 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngIf="materiais && materiais.length == 0">
+                <tr *ngIf="carregando">
+                    <td colspan="6" class="text-center align-middle">
+                        <div class="centered-div">
+                            <span class="loader"></span>
+                        </div>
+                    </td>
+                </tr>
+                <tr *ngIf="!carregando && materiais && materiais.length == 0">
                     <td colspan="6" class="text-center align-middle">
                         <div class="centered-div">
                             <p>Não há materiais cadastrados</p>

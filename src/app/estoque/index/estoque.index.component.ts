@@ -12,6 +12,7 @@ import { EstoqueService } from '../estoque.service';
 export class EstoqueIndexComponent {
   public obras: any = [];
   public pedidos: any = [];
+  public carregando: boolean = false;
 
   constructor(
     public obrasService : ObrasService,
@@ -25,8 +26,10 @@ export class EstoqueIndexComponent {
   }
 
   listarObras() {
+    this.carregando = true;
     this.obrasService.getObras().subscribe((obras) => {
       this.obras = obras;
+      this.carregando = false;
     });
   }
 
