@@ -23,6 +23,7 @@ import { MateriaisNewComponent } from './materiais/new/materiais.new.component';
 import { EstoqueViewComponent } from './estoque/view/estoque.view.component';
 import { PedidosEditComponent } from './pedidos/edit/pedidos.edit.component';
 import { EstoqueEditComponent } from './estoque/edit/estoque.edit.component';
+import { RecuperarSenhaComponent } from './login/recuperar-senha/recuperar-senha.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { EstoqueEditComponent } from './estoque/edit/estoque.edit.component';
     EstoqueViewComponent,
     PedidosEditComponent,
     EstoqueEditComponent,
+    RecuperarSenhaComponent,
   ],
   imports: [
     BrowserModule,

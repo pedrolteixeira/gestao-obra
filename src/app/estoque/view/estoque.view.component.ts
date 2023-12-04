@@ -33,6 +33,7 @@ export class EstoqueViewComponent {
   }
 
   listarMateriais() {
+    this.estoque = [];
     this.estoqueService.getEstoque().subscribe((resp) => {
       resp.forEach((material) => {
         if (material.idObraMaterial == this.estoqueService.obraSelecionada) {

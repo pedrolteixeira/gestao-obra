@@ -33,8 +33,8 @@ export class PedidosNewComponent {
     this.listarEstoque();
   }
 
-  alteraAvisoStatus() {
-    if (this.formData.status = 2) {
+  alterarAvisoStatus() {
+    if (this.formData.status == 2) {
       this.avisoStatus = true;
     } else {
       this.avisoStatus = false;
@@ -128,6 +128,7 @@ export class PedidosNewComponent {
         nomeMaterial: this.formData.nomeMaterial,
         unidadeMaterial: this.formData.unidadeMaterial,
       };
+      console.log(pedidoData)
       this.pedidosService.newPedido(pedidoData)
         .then(() => {
           this.toastr.success('Pedido de Material cadastrado com sucesso')

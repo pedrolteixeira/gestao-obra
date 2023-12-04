@@ -15,10 +15,12 @@ import { MateriaisNewComponent } from './materiais/new/materiais.new.component';
 import { EstoqueViewComponent } from './estoque/view/estoque.view.component';
 import { PedidosEditComponent } from './pedidos/edit/pedidos.edit.component';
 import { EstoqueEditComponent } from './estoque/edit/estoque.edit.component';
+import { RecuperarSenhaComponent } from './login/recuperar-senha/recuperar-senha.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent, canActivate: [authGuardLogado] },
   { path: 'register', component: RegisterComponent, canActivate: [authGuardLogado] },
+  { path: 'recuperar-senha', component: RecuperarSenhaComponent, canActivate: [authGuardLogado] },
   {
     path: '',
     redirectTo: '/pagina-inicial',

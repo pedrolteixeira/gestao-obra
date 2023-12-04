@@ -34,8 +34,8 @@ export class EstoqueEditComponent {
     this.estoqueService.editEstoque(this.formData.id, this.formData).then(() => {
       this.estoqueService.estoqueSelecionado = null;
       this.formData = {};
-      this.router.navigate(['estoque-view']);
       this.toastr.success('Estoque editado com sucesso');
+      this.router.navigate(['estoque-view']);
     })
   }
 }

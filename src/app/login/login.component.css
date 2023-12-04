@@ -9,6 +9,9 @@
   transform: translateX(-50%);
 }
 
+a {
+  color: black;
+}
 .form {
   margin-top: 50px;
 }
